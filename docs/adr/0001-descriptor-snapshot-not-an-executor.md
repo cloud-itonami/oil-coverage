@@ -9,7 +9,7 @@
 ## 文脈
 
 この repo は etzhayyim monorepo の `20-actors/oil-coverage` から 2026-05-21 に
-descriptor だけを写した snapshot である。2026-07-18 に `src/oil_coverage/murakumo.cljc`
+descriptor だけを写した snapshot である。2026-07-18 に `src/oil_coverage/murakumo.kotoba`
 （191 行の deny-by-default gate）が rescue commit として足された（PR #1）が、
 **README が 1 バイトも無かった**ため、この repo を開いた者には次が分からなかった:
 
