@@ -31,11 +31,11 @@ git clone git@github.com:cloud-itonami/oil-coverage.git
 cd oil-coverage
 ```
 
-**`src/oil_coverage/murakumo.cljc` があることを確かめる。** 無ければ checkout が
+**`src/oil_coverage/murakumo.kotoba` があることを確かめる。** 無ければ checkout が
 `main` より古い（west pin が 2026-07-18 の rescue commit より前を指していた時期がある）:
 
 ```bash
-ls src/oil_coverage/murakumo.cljc && git log --oneline -1
+ls src/oil_coverage/murakumo.kotoba && git log --oneline -1
 ```
 
 ---
@@ -163,7 +163,7 @@ curl -sS -o /dev/null -w '%{http_code}\n' --max-time 12 \
 
 ## 4. gate を動かす（この repo で唯一「実行できる」もの）
 
-`src/oil_coverage/murakumo.cljc` は 11 cell × 7 gate の deny-by-default。
+`src/oil_coverage/murakumo.kotoba` は 11 cell × 7 gate の deny-by-default。
 **attestation が 1 つでも欠ければ effect は 0 本**であることを、実際に見る:
 
 ```bash

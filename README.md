@@ -12,7 +12,7 @@ distribution）を上から測る meta actor** で、「国 × segment のうち
 | | ここにあるか |
 |---|---|
 | actor が**何を名乗り、何を要求し、どの pipeline を持つと宣言しているか** | **ある**（`actor-manifest.jsonld` / `.well-known/did.json`） |
-| **gate**（attestation が 7 つ揃わなければ effect を 1 つも出さない判断） | **ある**（`src/oil_coverage/murakumo.cljc`、191 行） |
+| **gate**（attestation が 7 つ揃わなければ effect を 1 つも出さない判断） | **ある**（`src/oil_coverage/murakumo.kotoba`、191 行） |
 | 被覆率を実際に数える graph、cron を撃つ scheduler、XRPC を受ける server | **無い** |
 | 石油の実データ（field / pipeline / refinery / cargo / benchmark） | **無い** |
 
@@ -30,7 +30,7 @@ distribution）を上から測る meta actor** で、「国 × segment のうち
 
 | 出所 | 名乗り | 2026-08-09 実測 |
 |---|---|---|
-| `actor-manifest.jsonld` の `@id`<br>`src/oil_coverage/murakumo.cljc` の `actor-did` | `did:web:oil-coverage.etzhayyim.com` | **解決しない**。`oil-coverage.etzhayyim.com` に A/AAAA レコードが無く、`curl` は `000`（接続前に失敗） |
+| `actor-manifest.jsonld` の `@id`<br>`src/oil_coverage/murakumo.kotoba` の `actor-did` | `did:web:oil-coverage.etzhayyim.com` | **解決しない**。`oil-coverage.etzhayyim.com` に A/AAAA レコードが無く、`curl` は `000`（接続前に失敗） |
 | `.well-known/did.json` の `id` | `did:web:etzhayyim.com:actor:oil-coverage` | **解決する**。`https://etzhayyim.com/actor/oil-coverage/did.json` が `200` |
 
 **gate が名乗るのは解決しない方**である（`murakumo.cljc:6`）。effect の
@@ -111,7 +111,7 @@ refinery, cargo …）を扱うと宣言している。この repo だけが `ac
 
 ## gate は何を止めるか
 
-`src/oil_coverage/murakumo.cljc` は **11 cell × 7 gate** の deny-by-default。
+`src/oil_coverage/murakumo.kotoba` は **11 cell × 7 gate** の deny-by-default。
 7 つの attestation が 1 つでも欠けると `:status :blocked` で `:effects` は空になる。
 
 7 gate: `:council-charter-attestation` `:no-platform-held-key-baseline`
@@ -146,6 +146,6 @@ snapshot。`actor-manifest.jsonld` が `runtime: k8s-langserver` /
   動いても赤くならない。`marine-insurance` は `test/…/docs_test.cljs` でこれを
   固定している —— 同じものがここにも要る。
 - **west pin が遅れていた。** superproject の pin は `36703a1`（2026-07-02）で、
-  `src/oil_coverage/murakumo.cljc` を含む `9532319` を指していなかった。この
+  `src/oil_coverage/murakumo.kotoba` を含む `9532319` を指していなかった。この
   README を書く時点で main に合わせている。
 - **identity の不整合を直していない**（上記 2 名の DID、live との差分）。
