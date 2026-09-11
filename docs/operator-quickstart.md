@@ -167,7 +167,7 @@ curl -sS -o /dev/null -w '%{http_code}\n' --max-time 12 \
 **attestation が 1 つでも欠ければ effect は 0 本**であることを、実際に見る:
 
 ```bash
-nbb --classpath src -e "
+kbb --backend sci --classpath src -e "
 (require '[oil_coverage.murakumo :as m])
 (println \"actor-did:\" m/actor-did)
 (println \"cells:\" (count m/cell-specs) \" gates:\" (count m/common-gates))
