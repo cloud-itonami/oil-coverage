@@ -31,7 +31,7 @@ context・`alsoKnownAs`・PDS endpoint・2 つ目の service がすべて違う�
 1. **この repo を「descriptor + gate の snapshot」として明示的に位置づける。**
    README の冒頭で「実装ではない」と名乗り、「ここにあるか」の表で
    *宣言* と *実行主体* を分ける。名前が機能を示さない repo は README 冒頭で
-   名乗る、という workspace 規則（superproject CLAUDE.md）の適用である。
+   名乗る、という workspace 規則（superproject AGENTS.md）の適用である。
    `oil-coverage` は主題を言うが、**meta actor であること**を言わない。
 
 2. **境界を最近接 repo に対して明示する。** `triggers.subscribeRepos` の 12
